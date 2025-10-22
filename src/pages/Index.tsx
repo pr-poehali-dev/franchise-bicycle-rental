@@ -56,7 +56,7 @@ const Index = () => {
             <h1 className="text-6xl md:text-8xl font-bold mb-8 text-secondary leading-tight">
               Франшиза проката<br />электро-велосипедов
             </h1>
-            <div className="inline-block bg-secondary text-white px-8 py-4 mb-12">
+            <div className="inline-block bg-primary text-white px-8 py-4 mb-12">
               <p className="text-sm uppercase tracking-wider mb-2">Минимальные инвестиции</p>
               <p className="text-5xl font-bold">1 490 000 ₽</p>
             </div>
