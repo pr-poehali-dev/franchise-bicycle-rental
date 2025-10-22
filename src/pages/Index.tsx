@@ -37,7 +37,7 @@ const Index = () => {
             <img 
               src="https://cdn.poehali.dev/files/f9bc8c6f-a4b5-46a4-b74a-96d04cf09aeb.png" 
               alt="Доставело" 
-              className="h-12"
+              className="h-16 md:h-20"
             />
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('about')} className="text-sm hover:text-primary transition-colors">О франшизе</button>
