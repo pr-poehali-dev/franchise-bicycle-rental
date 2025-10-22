@@ -34,10 +34,11 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Icon name="Bike" size={32} className="text-primary" />
-              <span className="text-2xl font-bold text-secondary">E-BIKE FRANCHISE</span>
-            </div>
+            <img 
+              src="https://cdn.poehali.dev/files/f9bc8c6f-a4b5-46a4-b74a-96d04cf09aeb.png" 
+              alt="Доставело" 
+              className="h-12"
+            />
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('about')} className="text-sm hover:text-primary transition-colors">О франшизе</button>
               <button onClick={() => scrollToSection('package')} className="text-sm hover:text-primary transition-colors">Условия</button>
