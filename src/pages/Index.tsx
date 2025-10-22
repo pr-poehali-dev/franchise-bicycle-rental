@@ -81,7 +81,7 @@ const Index = () => {
                   <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
                     <Icon name="Check" size={16} className="text-white" />
                   </div>
-                  <span className="text-lg">Проверенная бизнес-модель с окупаемостью от 12 месяцев</span>
+                  <span className="text-lg">Проверенная бизнес-модель с окупаемостью от 6 месяцев без учета паушального взноса</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
@@ -89,12 +89,7 @@ const Index = () => {
                   </div>
                   <span className="text-lg">Полное обучение персонала и маркетинговая поддержка</span>
                 </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <Icon name="Check" size={16} className="text-white" />
-                  </div>
-                  <span className="text-lg">Готовое программное обеспечение для управления парком</span>
-                </li>
+
                 <li className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
                     <Icon name="Check" size={16} className="text-white" />
