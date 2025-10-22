@@ -37,13 +37,13 @@ const Index = () => {
             <img 
               src="https://cdn.poehali.dev/files/5680030b-a296-4855-a363-45910d40a22d.png" 
               alt="Доставело" 
-              className="h-16 md:h-20"
+              className="h-12 md:h-14"
             />
             <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection('about')} className="text-sm hover:text-primary transition-colors">О франшизе</button>
-              <button onClick={() => scrollToSection('package')} className="text-sm hover:text-primary transition-colors">Условия</button>
-              <button onClick={() => scrollToSection('benefits')} className="text-sm hover:text-primary transition-colors">Преимущества</button>
-              <button onClick={() => scrollToSection('success')} className="text-sm hover:text-primary transition-colors">Истории успеха</button>
+              <button onClick={() => scrollToSection('about')} className="text-sm font-semibold hover:text-primary transition-colors">О франшизе</button>
+              <button onClick={() => scrollToSection('package')} className="text-sm font-semibold hover:text-primary transition-colors">Условия</button>
+              <button onClick={() => scrollToSection('benefits')} className="text-sm font-semibold hover:text-primary transition-colors">Преимущества</button>
+              <button onClick={() => scrollToSection('success')} className="text-sm font-semibold hover:text-primary transition-colors">Истории успеха</button>
               <Button onClick={() => scrollToSection('contact')} className="bg-primary hover:bg-primary/90">Оставить заявку</Button>
             </div>
           </div>
