@@ -35,7 +35,7 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <img 
-              src="https://cdn.poehali.dev/files/f9bc8c6f-a4b5-46a4-b74a-96d04cf09aeb.png" 
+              src="https://cdn.poehali.dev/files/5680030b-a296-4855-a363-45910d40a22d.png" 
               alt="Доставело" 
               className="h-64 md:h-80"
             />
