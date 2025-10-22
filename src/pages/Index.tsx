@@ -155,7 +155,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Icon name="Smartphone" size={20} className="text-primary" />
-                  <span>Мобильное приложение и система управления</span>
+                  <span>Система управления</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Icon name="GraduationCap" size={20} className="text-primary" />
