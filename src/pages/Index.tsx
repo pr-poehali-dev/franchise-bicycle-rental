@@ -151,7 +151,7 @@ const Index = () => {
                 <h4 className="font-bold text-lg mb-4">В стоимость включено:</h4>
                 <div className="flex items-center gap-3">
                   <Icon name="Zap" size={20} className="text-primary" />
-                  <span>Парк из 20+ электро-велосипедов</span>
+                  <span>Парк из 10+ электро-велосипедов</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Icon name="Smartphone" size={20} className="text-primary" />
