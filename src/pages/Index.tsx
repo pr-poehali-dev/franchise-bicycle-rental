@@ -343,10 +343,11 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Icon name="Bike" size={28} className="text-primary" />
-                <span className="text-xl font-bold text-secondary">E-BIKE FRANCHISE</span>
-              </div>
+              <img 
+                src="https://cdn.poehali.dev/files/5680030b-a296-4855-a363-45910d40a22d.png" 
+                alt="Доставело" 
+                className="h-16 mb-4"
+              />
               <p className="text-muted-foreground">Франшиза проката электро-велосипедов нового поколения</p>
             </div>
             <div>
@@ -354,11 +355,11 @@ const Index = () => {
               <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Icon name="Phone" size={16} />
-                  <span>+7 (495) 123-45-67</span>
+                  <span>+7 (964) 964-44-11</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="Mail" size={16} />
-                  <span>info@ebike-franchise.ru</span>
+                  <span>low.ufa@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -378,7 +379,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t pt-8 text-center text-muted-foreground">
-            <p>© 2024 E-BIKE FRANCHISE. Все права защищены.</p>
+            <p>© 2025 DOSTAVELO FRANCHISE. Все права защищены.</p>
           </div>
         </div>
       </footer>
