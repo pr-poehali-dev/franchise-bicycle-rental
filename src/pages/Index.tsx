@@ -226,57 +226,70 @@ const Index = () => {
 
       <section id="success" className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold mb-16 text-center text-secondary">Истории успеха</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                  АС
+          <h2 className="text-5xl font-bold mb-16 text-center text-secondary">История успеха основателя</h2>
+          
+          <Card className="border-2 border-primary">
+            <CardContent className="p-12">
+              <div className="flex items-center gap-6 mb-8">
+                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
+                  А
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-secondary">Алексей Смирнов</h3>
-                  <p className="text-muted-foreground">Москва, 2023</p>
+                  <h3 className="text-3xl font-bold text-secondary">Айтуган</h3>
+                  <p className="text-xl text-muted-foreground">Основатель компании Доставело, Уфа</p>
                 </div>
               </div>
-              <p className="text-muted-foreground mb-4">
-                "Запустили франшизу в парке Сокольники. За первый сезон вышли на 150 000 ₽ чистой прибыли в месяц. Окупили вложения за 10 месяцев. Планируем открыть вторую точку."
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t">
-                <div>
-                  <div className="text-2xl font-bold text-primary">10 мес</div>
-                  <div className="text-sm text-muted-foreground">Окупаемость</div>
+              
+              <div className="space-y-6 text-lg leading-relaxed mb-8">
+                <p>
+                  <strong>Декабрь 2024 года</strong> — увидел нишу велошеринга в Москве и начал изучать спрос в своем городе Уфа. 
+                  Проанализировав рынок, понял, что у этой ниши огромный потенциал.
+                </p>
+                
+                <div className="bg-primary/10 p-6 rounded-lg border-l-4 border-primary">
+                  <p className="font-semibold text-xl text-primary">
+                    Февраль 2025 — Закупил первые 20 байков. Вся партия ушла в аренду за неделю!
+                  </p>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">150к ₽</div>
-                  <div className="text-sm text-muted-foreground">Прибыль/мес</div>
-                </div>
-              </div>
-            </Card>
-            <Card className="p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                  МК
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-secondary">Мария Кузнецова</h3>
-                  <p className="text-muted-foreground">Санкт-Петербург, 2022</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                "Открыли прокат на набережной. Первый год был сложным, но поддержка франчайзера помогла. Сейчас у нас 3 точки и команда из 8 человек. Бизнес приносит стабильный доход."
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t">
-                <div>
-                  <div className="text-2xl font-bold text-primary">3 точки</div>
-                  <div className="text-sm text-muted-foreground">За 3 года</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">400к ₽</div>
-                  <div className="text-sm text-muted-foreground">Прибыль/мес</div>
+                
+                <p>
+                  <strong>Апрель 2025</strong> — привлек инвестиции на 2 000 000 ₽ и закупил еще 40 байков. 
+                  В стоимость вошли велосипеды, система ГЛОНАСС, доставка и модернизация. Партия была отправлена 
+                  в прокат чуть больше чем за 2 недели с учетом сборки.
+                </p>
+                
+                <p>
+                  <strong>Начало лета 2025</strong> — докупил еще 54 байка. <strong>К середине лета парк вырос до 130 велосипедов!</strong>
+                </p>
+                
+                <div className="bg-secondary/10 p-6 rounded-lg border-l-4 border-secondary">
+                  <p className="font-semibold text-xl text-secondary">
+                    Сегодня я — один из крупнейших шеринговых парков в Уфе. Работаю с Яндекс Доставка, 
+                    Самокат, Купер и другими службами доставки.
+                  </p>
                 </div>
               </div>
-            </Card>
-          </div>
+              
+              <div className="grid md:grid-cols-4 gap-6 pt-8 border-t-2">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-primary mb-2">130</div>
+                  <div className="text-sm text-muted-foreground">Байков в парке</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-secondary mb-2">6 мес</div>
+                  <div className="text-sm text-muted-foreground">Рост с 20 до 130</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-primary mb-2">2+ млн</div>
+                  <div className="text-sm text-muted-foreground">Инвестиций</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-secondary mb-2">#1</div>
+                  <div className="text-sm text-muted-foreground">В регионе</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
