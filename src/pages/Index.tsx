@@ -107,16 +107,16 @@ const Index = () => {
               <h3 className="text-2xl font-bold mb-6 text-secondary">Рынок и перспективы</h3>
               <div className="space-y-6">
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">250%</div>
+                  <div className="text-4xl font-bold text-primary mb-2">350%</div>
                   <p className="text-muted-foreground">Рост рынка микромобильности за последние 3 года</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">70%</div>
+                  <div className="text-4xl font-bold text-primary mb-2">85%</div>
                   <p className="text-muted-foreground">Средняя маржинальность бизнеса</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-primary mb-2">12 мес</div>
-                  <p className="text-muted-foreground">Средний срок окупаемости инвестиций</p>
+                  <div className="text-4xl font-bold text-primary mb-2">от 6 мес</div>
+                  <p className="text-muted-foreground">Окупаемость без учета паушального взноса</p>
                 </div>
               </div>
             </div>
