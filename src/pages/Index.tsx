@@ -341,7 +341,7 @@ const Index = () => {
 
       <footer className="bg-muted/30 py-12 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <img 
                 src="https://cdn.poehali.dev/files/5680030b-a296-4855-a363-45910d40a22d.png" 
@@ -361,20 +361,6 @@ const Index = () => {
                   <Icon name="Mail" size={16} />
                   <span>low.ufa@gmail.com</span>
                 </div>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-secondary">Социальные сети</h4>
-              <div className="flex gap-4">
-                <button className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-colors">
-                  <Icon name="Instagram" size={20} />
-                </button>
-                <button className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-colors">
-                  <Icon name="Send" size={20} />
-                </button>
-                <button className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-colors">
-                  <Icon name="Youtube" size={20} />
-                </button>
               </div>
             </div>
           </div>
