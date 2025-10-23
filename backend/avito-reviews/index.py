@@ -31,7 +31,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     
     if method == 'GET':
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
-            cur.execute('SELECT * FROM avito_reviews ORDER BY created_at DESC')
+            cur.execute('SELECT * FROM t_p91341333_franchise_bicycle_re.avito_reviews ORDER BY created_at DESC')
             reviews = cur.fetchall()
         
         conn.close()
@@ -72,11 +72,11 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 })
         
         with conn.cursor() as cur:
-            cur.execute('DELETE FROM avito_reviews')
+            cur.execute('DELETE FROM t_p91341333_franchise_bicycle_re.avito_reviews')
             
             for review in reviews_data:
                 cur.execute(
-                    'INSERT INTO avito_reviews (author, text, rating) VALUES (%s, %s, %s)',
+                    'INSERT INTO t_p91341333_franchise_bicycle_re.avito_reviews (author, text, rating) VALUES (%s, %s, %s)',
                     (review['author'], review['text'], review['rating'])
                 )
         
