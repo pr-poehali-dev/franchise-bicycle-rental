@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Send franchise request",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Петров",
+        "phone": "+79991234567",
+        "email": "ivan@example.com",
+        "message": "Интересует франшиза в Москве"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "whatsapp_link": "string",
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Handle OPTIONS for CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": ""
+    }
+  ]
+}

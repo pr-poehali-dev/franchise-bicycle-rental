@@ -15,13 +15,38 @@ const Index = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время",
-    });
-    setFormData({ name: '', phone: '', email: '', message: '' });
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/8cd3a50a-b9d9-41a7-a3d0-620033931a2e', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (data.success && data.whatsapp_link) {
+        // Open WhatsApp with pre-filled message
+        window.open(data.whatsapp_link, '_blank');
+        
+        toast({
+          title: "Заявка сформирована!",
+          description: "Отправьте сообщение через WhatsApp",
+        });
+        
+        setFormData({ name: '', phone: '', email: '', message: '' });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Попробуйте еще раз",
+        variant: "destructive",
+      });
+    }
   };
 
   const scrollToSection = (id: string) => {
