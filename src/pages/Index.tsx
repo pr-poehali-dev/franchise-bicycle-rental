@@ -19,7 +19,8 @@ const Index = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://functions.poehali.dev/8cd3a50a-b9d9-41a7-a3d0-620033931a2e', {
+      // Save to database
+      const saveResponse = await fetch('https://functions.poehali.dev/da58009b-07ea-4a0f-ac0b-5ed8af9d7a13', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,15 +28,12 @@ const Index = () => {
         body: JSON.stringify(formData),
       });
       
-      const data = await response.json();
+      const saveData = await saveResponse.json();
       
-      if (data.success && data.whatsapp_link) {
-        // Open WhatsApp with pre-filled message
-        window.open(data.whatsapp_link, '_blank');
-        
+      if (saveData.success) {
         toast({
-          title: "Заявка сформирована!",
-          description: "Отправьте сообщение через WhatsApp",
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в ближайшее время",
         });
         
         setFormData({ name: '', phone: '', email: '', message: '' });
