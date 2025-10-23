@@ -2,6 +2,7 @@ import json
 import os
 from typing import Dict, Any
 import psycopg2
+import requests
 
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
@@ -55,6 +56,29 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     conn.commit()
     cur.close()
     conn.close()
+    
+    # Send to Telegram
+    telegram_token = os.environ.get('TELEGRAM_BOT_TOKEN')
+    telegram_chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    
+    if telegram_token and telegram_chat_id:
+        telegram_message = f"""🚴 Новая заявка на франшизу!
+
+👤 Имя: {name}
+📱 Телефон: {phone}
+📧 Email: {email}
+
+💬 Сообщение:
+{message}
+
+🆔 ID заявки: {request_id}"""
+        
+        telegram_url = f"https://api.telegram.org/bot{telegram_token}/sendMessage"
+        requests.post(telegram_url, json={
+            'chat_id': telegram_chat_id,
+            'text': telegram_message,
+            'parse_mode': 'HTML'
+        })
     
     return {
         'statusCode': 200,
