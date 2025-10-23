@@ -18,7 +18,7 @@ const Login = () => {
     setLoading(true);
 
     // Check credentials
-    if (username === 'Dostavelo.ufa' && password === 'AynaAytuganovna01021995') {
+    if (username === 'dostavelo.franshiza@mail.ru' && password === 'AynaAytuganovna01021995') {
       // Save auth token
       localStorage.setItem('inbox_auth', 'authenticated');
       navigate('/inbox');
