@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -14,6 +14,7 @@ const Index = () => {
     email: '',
     message: ''
   });
+  const [reviews, setReviews] = useState<any[]>([]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,6 +52,13 @@ const Index = () => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0')
+      .then(res => res.json())
+      .then(data => setReviews(data.slice(0, 6)))
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -308,6 +316,34 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted/30 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-5xl font-bold mb-4 text-center text-secondary">Отзывы с Авито</h2>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Реальные отзывы наших клиентов</p>
+          
+          {reviews.length > 0 ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {reviews.map((review, idx) => (
+                <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-center gap-2 mb-4">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <Icon key={i} name="Star" size={16} className="text-yellow-500 fill-yellow-500" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4">{review.text}</p>
+                  <p className="font-semibold text-secondary">{review.author}</p>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center text-muted-foreground">
+              <Icon name="MessageSquare" size={48} className="mx-auto mb-4 opacity-50" />
+              <p>Отзывы загружаются...</p>
+            </div>
+          )}
         </div>
       </section>
 

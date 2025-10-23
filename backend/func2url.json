@@ -1,4 +1,5 @@
 {
+  "avito-reviews": "https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0",
   "get-franchise-requests": "https://functions.poehali.dev/251a5d2c-be77-4b4e-9c32-c08b74dca6dd",
   "save-franchise-request": "https://functions.poehali.dev/da58009b-07ea-4a0f-ac0b-5ed8af9d7a13",
   "send-franchise-request": "https://functions.poehali.dev/8cd3a50a-b9d9-41a7-a3d0-620033931a2e"

@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "Get reviews",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": [],
+      "bodyMatcher": "type"
+    },
+    {
+      "name": "Update reviews from Avito",
+      "method": "POST",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
