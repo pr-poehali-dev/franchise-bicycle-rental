@@ -64,6 +64,7 @@ const Index = () => {
       const response = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
       const data = await response.json();
       setReviews(data.slice(0, 6));
+      localStorage.setItem('reviews_last_update', Date.now().toString());
       
       toast({
         title: "Отзывы обновлены!",
@@ -86,7 +87,11 @@ const Index = () => {
         const response = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
         const data = await response.json();
         
-        if (data.length === 0) {
+        const lastUpdate = localStorage.getItem('reviews_last_update');
+        const now = Date.now();
+        const oneDayMs = 24 * 60 * 60 * 1000;
+        
+        if (data.length === 0 || !lastUpdate || (now - parseInt(lastUpdate)) > oneDayMs) {
           await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0', {
             method: 'POST'
           });
@@ -94,6 +99,7 @@ const Index = () => {
           const retryResponse = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
           const retryData = await retryResponse.json();
           setReviews(retryData.slice(0, 6));
+          localStorage.setItem('reviews_last_update', now.toString());
         } else {
           setReviews(data.slice(0, 6));
         }
