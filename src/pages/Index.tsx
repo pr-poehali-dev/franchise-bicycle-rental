@@ -389,19 +389,38 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-8 md:mb-16 text-sm md:text-lg">Реальные отзывы наших клиентов</p>
           
           {reviews.length > 0 ? (
-            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-              {reviews.map((review, idx) => (
-                <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
-                  <div className="flex items-center gap-2 mb-4">
-                    {Array.from({ length: review.rating }).map((_, i) => (
-                      <Icon key={i} name="Star" size={16} className="text-yellow-500 fill-yellow-500" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4">{review.text}</p>
-                  <p className="font-semibold text-secondary">{review.author}</p>
-                </Card>
-              ))}
-            </div>
+            <>
+              <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
+                {reviews.map((review, idx) => (
+                  <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
+                    <div className="flex items-center gap-2 mb-4">
+                      {Array.from({ length: review.rating }).map((_, i) => (
+                        <Icon key={i} name="Star" size={16} className="text-yellow-500 fill-yellow-500" />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground mb-4">{review.text}</p>
+                    <p className="font-semibold text-secondary">{review.author}</p>
+                  </Card>
+                ))}
+              </div>
+              <div className="text-center">
+                <Button 
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="gap-2"
+                >
+                  <a 
+                    href="https://www.avito.ru/user/2456c6e89dc07e321fdf7e948f223f86/profile" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Icon name="ExternalLink" size={18} />
+                    Все отзывы на Avito
+                  </a>
+                </Button>
+              </div>
+            </>
           ) : (
             <div className="text-center text-muted-foreground">
               <Icon name="MessageSquare" size={48} className="mx-auto mb-4 opacity-50" />
