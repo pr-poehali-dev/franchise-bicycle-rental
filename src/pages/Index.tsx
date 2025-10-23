@@ -15,6 +15,7 @@ const Index = () => {
     message: ''
   });
   const [reviews, setReviews] = useState<any[]>([]);
+  const [isUpdatingReviews, setIsUpdatingReviews] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,6 +52,32 @@ const Index = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const updateReviews = async () => {
+    setIsUpdatingReviews(true);
+    try {
+      await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0', {
+        method: 'POST'
+      });
+      
+      const response = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
+      const data = await response.json();
+      setReviews(data.slice(0, 6));
+      
+      toast({
+        title: "Отзывы обновлены!",
+        description: `Загружено ${data.length} отзывов с Авито`,
+      });
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось обновить отзывы",
+        variant: "destructive",
+      });
+    } finally {
+      setIsUpdatingReviews(false);
+    }
   };
 
   useEffect(() => {
@@ -339,7 +366,19 @@ const Index = () => {
 
       <section className="py-20 bg-muted/30 px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold mb-4 text-center text-secondary">Отзывы с Авито</h2>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <h2 className="text-5xl font-bold text-center text-secondary">Отзывы с Авито</h2>
+            <Button 
+              onClick={updateReviews} 
+              disabled={isUpdatingReviews}
+              variant="outline"
+              size="sm"
+              className="gap-2"
+            >
+              <Icon name={isUpdatingReviews ? "Loader2" : "RefreshCw"} size={16} className={isUpdatingReviews ? "animate-spin" : ""} />
+              {isUpdatingReviews ? 'Обновление...' : 'Обновить'}
+            </Button>
+          </div>
           <p className="text-center text-muted-foreground mb-16 text-lg">Реальные отзывы наших клиентов</p>
           
           {reviews.length > 0 ? (
