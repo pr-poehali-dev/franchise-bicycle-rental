@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 
@@ -18,6 +20,15 @@ const Inbox = () => {
   const [requests, setRequests] = useState<FranchiseRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
+  const navigate = useNavigate();
+
+  // Check authentication
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem('inbox_auth');
+    if (!isAuthenticated) {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   const fetchRequests = async () => {
     try {
@@ -84,6 +95,16 @@ const Inbox = () => {
                 <Icon name="Mail" size={20} className="mr-2" />
                 {requests.length} заявок
               </Badge>
+              <Button 
+                variant="outline"
+                onClick={() => {
+                  localStorage.removeItem('inbox_auth');
+                  navigate('/login');
+                }}
+              >
+                <Icon name="LogOut" size={20} className="mr-2" />
+                Выход
+              </Button>
             </div>
           </div>
         </div>
