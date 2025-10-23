@@ -114,12 +114,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
           <div className="flex items-center justify-between">
             <img 
               src="https://cdn.poehali.dev/files/5680030b-a296-4855-a363-45910d40a22d.png" 
               alt="Доставело" 
-              className="h-14 md:h-16"
+              className="h-10 md:h-16"
             />
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => scrollToSection('about')} className="text-base font-semibold hover:text-primary transition-colors">О франшизе</button>
@@ -128,33 +128,34 @@ const Index = () => {
               <button onClick={() => scrollToSection('success')} className="text-base font-semibold hover:text-primary transition-colors">Истории успеха</button>
               <Button onClick={() => scrollToSection('contact')} className="bg-primary hover:bg-primary/90">Оставить заявку</Button>
             </div>
+            <Button onClick={() => scrollToSection('contact')} className="md:hidden bg-primary hover:bg-primary/90" size="sm">Заявка</Button>
           </div>
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 text-secondary leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 text-secondary leading-tight">
               Франшиза проката<br />электро-велосипедов
             </h1>
-            <div className="inline-block bg-primary text-white px-8 py-4 mb-12">
-              <p className="text-sm uppercase tracking-wider mb-2">Минимальные инвестиции</p>
-              <p className="text-5xl font-bold">1 490 000 ₽</p>
+            <div className="inline-block bg-primary text-white px-6 md:px-8 py-3 md:py-4 mb-8 md:mb-12">
+              <p className="text-xs md:text-sm uppercase tracking-wider mb-1 md:mb-2">Минимальные инвестиции</p>
+              <p className="text-3xl md:text-5xl font-bold">1 490 000 ₽</p>
             </div>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 md:mb-12 px-4">
               Откройте прибыльный бизнес в быстрорастущей нише эко-транспорта
             </p>
-            <Button onClick={() => scrollToSection('contact')} size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-6 h-auto">
+            <Button onClick={() => scrollToSection('contact')} size="lg" className="bg-primary hover:bg-primary/90 text-base md:text-lg px-8 md:px-12 py-4 md:py-6 h-auto">
               Получить презентацию
             </Button>
           </div>
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-muted/30 px-6">
+      <section id="about" className="py-12 md:py-20 bg-muted/30 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold mb-16 text-center text-secondary">О франшизе</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-16 text-center text-secondary">О франшизе</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold mb-6 text-secondary">Что вы получаете</h3>
@@ -201,27 +202,27 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="package" className="py-20 px-6">
+      <section id="package" className="py-12 md:py-20 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold mb-16 text-center text-secondary">Условия и пакеты</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-16 text-center text-secondary">Условия и пакеты</h2>
           <Card className="max-w-2xl mx-auto border-2 border-primary">
-            <CardContent className="p-12">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold mb-4 text-secondary">Стартовый пакет</h3>
-                <p className="text-muted-foreground">Всё необходимое для запуска бизнеса</p>
+            <CardContent className="p-6 md:p-12">
+              <div className="text-center mb-6 md:mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-secondary">Стартовый пакет</h3>
+                <p className="text-sm md:text-base text-muted-foreground">Всё необходимое для запуска бизнеса</p>
               </div>
-              <div className="space-y-6 mb-8">
-                <div className="flex justify-between items-center pb-4 border-b">
-                  <span className="text-lg">Паушальный взнос</span>
-                  <span className="text-2xl font-bold text-secondary">490 000 ₽</span>
+              <div className="space-y-4 md:space-y-6 mb-6 md:mb-8">
+                <div className="flex justify-between items-center pb-3 md:pb-4 border-b">
+                  <span className="text-sm md:text-lg">Паушальный взнос</span>
+                  <span className="text-lg md:text-2xl font-bold text-secondary">490 000 ₽</span>
                 </div>
-                <div className="flex justify-between items-center pb-4 border-b">
-                  <span className="text-lg">Инвестиции в парк</span>
-                  <span className="text-2xl font-bold text-secondary">от 1 000 000 ₽</span>
+                <div className="flex justify-between items-center pb-3 md:pb-4 border-b">
+                  <span className="text-sm md:text-lg">Инвестиции в парк</span>
+                  <span className="text-lg md:text-2xl font-bold text-secondary">от 1 000 000 ₽</span>
                 </div>
-                <div className="flex justify-between items-center pt-4 bg-muted/30 p-6 rounded-lg">
-                  <span className="text-xl font-bold">Общие минимальные вложения</span>
-                  <span className="text-3xl font-bold text-primary">1 490 000 ₽</span>
+                <div className="flex flex-col md:flex-row justify-between md:items-center gap-2 pt-3 md:pt-4 bg-muted/30 p-4 md:p-6 rounded-lg">
+                  <span className="text-base md:text-xl font-bold">Общие минимальные вложения</span>
+                  <span className="text-2xl md:text-3xl font-bold text-primary">1 490 000 ₽</span>
                 </div>
               </div>
               <div className="space-y-3 mb-8">
@@ -243,7 +244,7 @@ const Index = () => {
                   <span>Маркетинговые материалы</span>
                 </div>
               </div>
-              <Button onClick={() => scrollToSection('contact')} className="w-full bg-secondary hover:bg-secondary/90 h-14 text-lg">
+              <Button onClick={() => scrollToSection('contact')} className="w-full bg-secondary hover:bg-secondary/90 h-12 md:h-14 text-base md:text-lg">
                 Забронировать территорию
               </Button>
             </CardContent>
@@ -251,46 +252,46 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="benefits" className="py-20 bg-muted/30 px-6">
+      <section id="benefits" className="py-12 md:py-20 bg-muted/30 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold mb-16 text-center text-secondary">Преимущества бизнеса</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-16 text-center text-secondary">Преимущества бизнеса</h2>
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            <Card className="text-center p-6 md:p-8 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icon name="Zap" size={32} className="text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-secondary">Быстрый старт</h3>
               <p className="text-muted-foreground">Запуск бизнеса за 30 дней с момента подписания договора</p>
             </Card>
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+            <Card className="text-center p-6 md:p-8 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icon name="MapPin" size={32} className="text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-secondary">Закрытые территории</h3>
               <p className="text-muted-foreground">Эксклюзивные права на вашу географическую зону</p>
             </Card>
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+            <Card className="text-center p-6 md:p-8 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icon name="LineChart" size={32} className="text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-secondary">Растущий рынок</h3>
               <p className="text-muted-foreground">Спрос на эко-транспорт увеличивается на 40% ежегодно</p>
             </Card>
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+            <Card className="text-center p-6 md:p-8 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icon name="Users" size={32} className="text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-secondary">Минимум персонала</h3>
               <p className="text-muted-foreground">Для работы достаточно 2-3 сотрудников</p>
             </Card>
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+            <Card className="text-center p-6 md:p-8 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icon name="Calendar" size={32} className="text-white" />
               </div>
               <h3 className="text-xl font-bold mb-4 text-secondary">Круглогодичный доход</h3>
               <p className="text-muted-foreground">Возможность работы в помещениях в зимний период</p>
             </Card>
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+            <Card className="text-center p-6 md:p-8 hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icon name="Settings" size={32} className="text-white" />
               </div>
@@ -301,30 +302,30 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="success" className="py-20 px-6">
+      <section id="success" className="py-12 md:py-20 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-5xl font-bold mb-16 text-center text-secondary">История успеха основателя</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 md:mb-16 text-center text-secondary">История успеха основателя</h2>
           
           <Card className="border-2 border-primary">
-            <CardContent className="p-12">
-              <div className="flex items-center gap-6 mb-8">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
+            <CardContent className="p-6 md:p-12">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 mb-6 md:mb-8">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl md:text-3xl font-bold flex-shrink-0">
                   А
                 </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-secondary">Айтуган</h3>
-                  <p className="text-xl text-muted-foreground">Основатель компании Доставело, Уфа</p>
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl md:text-3xl font-bold text-secondary">Айтуган</h3>
+                  <p className="text-base md:text-xl text-muted-foreground">Основатель компании Доставело, Уфа</p>
                 </div>
               </div>
               
-              <div className="space-y-6 text-lg leading-relaxed mb-8">
+              <div className="space-y-4 md:space-y-6 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">
                 <p>
                   <strong>Декабрь 2024 года</strong> — увидел нишу велошеринга в Москве и начал изучать спрос в своем городе Уфа. 
                   Проанализировав рынок, понял, что у этой ниши огромный потенциал.
                 </p>
                 
-                <div className="bg-primary/10 p-6 rounded-lg border-l-4 border-primary">
-                  <p className="font-semibold text-xl text-primary">
+                <div className="bg-primary/10 p-4 md:p-6 rounded-lg border-l-4 border-primary">
+                  <p className="font-semibold text-base md:text-xl text-primary">
                     Февраль 2025 — Закупил первые 20 байков. Вся партия ушла в аренду за неделю!
                   </p>
                 </div>
@@ -339,30 +340,30 @@ const Index = () => {
                   <strong>Начало лета 2025</strong> — докупил еще 54 байка. <strong>К середине лета парк вырос до 130 велосипедов!</strong>
                 </p>
                 
-                <div className="bg-secondary/10 p-6 rounded-lg border-l-4 border-secondary">
-                  <p className="font-semibold text-xl text-secondary">
+                <div className="bg-secondary/10 p-4 md:p-6 rounded-lg border-l-4 border-secondary">
+                  <p className="font-semibold text-base md:text-xl text-secondary">
                     Сегодня я — один из крупнейших шеринговых парков в Уфе. Работаю с Яндекс Доставка, 
                     Самокат, Купер и другими службами доставки.
                   </p>
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-4 gap-6 pt-8 border-t-2">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-6 md:pt-8 border-t-2">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">130</div>
-                  <div className="text-sm text-muted-foreground">Байков в парке</div>
+                  <div className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">130</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Байков в парке</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-secondary mb-2">6 мес</div>
-                  <div className="text-sm text-muted-foreground">Рост с 20 до 130</div>
+                  <div className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">6 мес</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Рост с 20 до 130</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">2+ млн</div>
-                  <div className="text-sm text-muted-foreground">Инвестиций</div>
+                  <div className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">2+ млн</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Инвестиций</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-secondary mb-2">#1</div>
-                  <div className="text-sm text-muted-foreground">В регионе</div>
+                  <div className="text-2xl md:text-4xl font-bold text-secondary mb-1 md:mb-2">#1</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">В регионе</div>
                 </div>
               </div>
             </CardContent>
@@ -370,10 +371,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-muted/30 px-6">
+      <section className="py-12 md:py-20 bg-muted/30 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <h2 className="text-5xl font-bold text-center text-secondary">Отзывы с Авито</h2>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 mb-3 md:mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-center text-secondary">Отзывы с Авито</h2>
             <Button 
               onClick={updateReviews} 
               disabled={isUpdatingReviews}
@@ -385,10 +386,10 @@ const Index = () => {
               {isUpdatingReviews ? 'Обновление...' : 'Обновить'}
             </Button>
           </div>
-          <p className="text-center text-muted-foreground mb-16 text-lg">Реальные отзывы наших клиентов</p>
+          <p className="text-center text-muted-foreground mb-8 md:mb-16 text-sm md:text-lg">Реальные отзывы наших клиентов</p>
           
           {reviews.length > 0 ? (
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
               {reviews.map((review, idx) => (
                 <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
                   <div className="flex items-center gap-2 mb-4">
@@ -410,20 +411,20 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 bg-secondary text-white px-6">
+      <section id="contact" className="py-12 md:py-20 bg-secondary text-white px-4 md:px-6">
         <div className="container mx-auto max-w-2xl">
-          <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold mb-6">Оставьте заявку</h2>
-            <p className="text-xl opacity-90">Получите презентацию и финансовую модель бизнеса</p>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">Оставьте заявку</h2>
+            <p className="text-base md:text-xl opacity-90">Получите презентацию и финансовую модель бизнеса</p>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div>
               <Input
                 placeholder="Ваше имя"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-14"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 md:h-14"
               />
             </div>
             <div>
@@ -433,7 +434,7 @@ const Index = () => {
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 required
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-14"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 md:h-14"
               />
             </div>
             <div>
@@ -443,7 +444,7 @@ const Index = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-14"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 h-12 md:h-14"
               />
             </div>
             <div>
@@ -451,26 +452,26 @@ const Index = () => {
                 placeholder="Расскажите о себе и вашем городе"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 min-h-32"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/60 min-h-24 md:min-h-32"
               />
             </div>
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white h-14 text-lg">
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white h-12 md:h-14 text-base md:text-lg">
               Получить презентацию
             </Button>
           </form>
         </div>
       </section>
 
-      <footer className="bg-muted/30 py-12 px-6">
+      <footer className="bg-muted/30 py-8 md:py-12 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
             <div>
               <img 
                 src="https://cdn.poehali.dev/files/5680030b-a296-4855-a363-45910d40a22d.png" 
                 alt="Доставело" 
-                className="h-16 mb-4"
+                className="h-12 md:h-16 mb-3 md:mb-4"
               />
-              <p className="text-muted-foreground">Франшиза проката электро-велосипедов нового поколения</p>
+              <p className="text-sm md:text-base text-muted-foreground">Франшиза проката электро-велосипедов нового поколения</p>
             </div>
             <div>
               <h4 className="font-bold mb-4 text-secondary">Контакты</h4>
