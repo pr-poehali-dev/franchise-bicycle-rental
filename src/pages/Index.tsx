@@ -54,10 +54,28 @@ const Index = () => {
   };
 
   useEffect(() => {
-    fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0')
-      .then(res => res.json())
-      .then(data => setReviews(data.slice(0, 6)))
-      .catch(console.error);
+    const loadReviews = async () => {
+      try {
+        const response = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
+        const data = await response.json();
+        
+        if (data.length === 0) {
+          await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0', {
+            method: 'POST'
+          });
+          
+          const retryResponse = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
+          const retryData = await retryResponse.json();
+          setReviews(retryData.slice(0, 6));
+        } else {
+          setReviews(data.slice(0, 6));
+        }
+      } catch (error) {
+        console.error('Error loading reviews:', error);
+      }
+    };
+    
+    loadReviews();
   }, []);
 
   return (
