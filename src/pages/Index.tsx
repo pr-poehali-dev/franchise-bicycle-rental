@@ -5,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import { API_ENDPOINTS } from '@/lib/api';
 
 const Index = () => {
   const { toast } = useToast();
@@ -22,7 +23,7 @@ const Index = () => {
     
     try {
       // Save to database
-      const saveResponse = await fetch('https://functions.poehali.dev/da58009b-07ea-4a0f-ac0b-5ed8af9d7a13', {
+      const saveResponse = await fetch(API_ENDPOINTS.saveFranchiseRequest, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -57,11 +58,11 @@ const Index = () => {
   const updateReviews = async () => {
     setIsUpdatingReviews(true);
     try {
-      await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0', {
+      await fetch(API_ENDPOINTS.avitoReviews, {
         method: 'POST'
       });
       
-      const response = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
+      const response = await fetch(API_ENDPOINTS.avitoReviews);
       const data = await response.json();
       setReviews(data.slice(0, 6));
       localStorage.setItem('reviews_last_update', Date.now().toString());
@@ -84,7 +85,7 @@ const Index = () => {
   useEffect(() => {
     const loadReviews = async () => {
       try {
-        const response = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
+        const response = await fetch(API_ENDPOINTS.avitoReviews);
         const data = await response.json();
         
         const lastUpdate = localStorage.getItem('reviews_last_update');
@@ -92,11 +93,11 @@ const Index = () => {
         const oneDayMs = 24 * 60 * 60 * 1000;
         
         if (data.length === 0 || !lastUpdate || (now - parseInt(lastUpdate)) > oneDayMs) {
-          await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0', {
+          await fetch(API_ENDPOINTS.avitoReviews, {
             method: 'POST'
           });
           
-          const retryResponse = await fetch('https://functions.poehali.dev/77b19ba3-7530-41ba-8adc-4dec0ef96ac0');
+          const retryResponse = await fetch(API_ENDPOINTS.avitoReviews);
           const retryData = await retryResponse.json();
           setReviews(retryData.slice(0, 6));
           localStorage.setItem('reviews_last_update', now.toString());

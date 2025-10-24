@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import { API_ENDPOINTS } from '@/lib/api';
 
 interface FranchiseRequest {
   id: number;
@@ -32,7 +33,7 @@ const Inbox = () => {
 
   const fetchRequests = async () => {
     try {
-      const response = await fetch('https://functions.poehali.dev/251a5d2c-be77-4b4e-9c32-c08b74dca6dd');
+      const response = await fetch(API_ENDPOINTS.getFranchiseRequests);
       const data = await response.json();
       
       if (data.success) {
